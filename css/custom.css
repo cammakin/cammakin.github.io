@@ -1,0 +1,224 @@
+/*
+	Author: Cam Makin
+	Creation Date: 	7/3/2019
+	Revision Date:  7/14/2019
+	Comments: Custom CSS for my personal site on top of Bootstrap4
+	Repo: https://github.com/cammakin/Personal-Website
+*/
+
+/*All pages*/
+html {
+    overflow-y: scroll;
+}
+body{
+	overflow-x: hidden;
+}
+div.jumbotron{
+	margin-bottom: 16px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+.trans_unit{
+	color: white;
+	font-weight: 30;
+	padding-right: 2rem;
+	padding-top: 1.5rem;
+	transition: font-size 1s;
+}
+.trans_unit:hover{
+	font-size: 120%; 
+  	color: white;
+}
+.trans_unit:focus{
+	font-size: 120%; 
+	box-shadow: none;
+}
+.header_picture{
+	background-size: cover; 
+	background-position: center center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken;
+}
+div.jumbotron{
+	background-color: #D3D3D3;
+	margin-top: 1rem;
+}
+
+/*index.html*/
+#fullname{
+	color: white;
+	padding-top: 4rem;
+	padding-bottom: 1.5rem;
+	font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+#maininfo{
+	color: white;
+	font-weight: 50;
+	line-height: 1.75;
+}
+
+
+/*Header Fonts and Images*/
+#page_header{
+	color: white;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+/*Education*/
+#vt_image{
+	background: url(../images/wirelessatvt.jpg);
+	position: relative;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 3rem;
+}
+
+/*Work Experience Images*/
+.link_image {
+    border: 3px solid transparent;
+}
+.link_image:hover{
+
+    border: 3px solid lightblue;
+}
+
+.work_date{
+	padding-bottom: 12px;
+}
+#work_vt{
+	margin-top: 2.4rem;
+}
+#work_behrend{
+	margin-top: 6.5rem;
+}
+#work_ei{
+	margin-top: 6.5rem;
+}
+#work_na{
+	margin-top: 1.5rem;
+}
+.water_polo_img{
+	color: rgb(34, 110, 147);
+	font-variant: small-caps;
+	font-weight: 350;
+}
+
+/*Projects*/
+.project_btn{
+    font-size: 1.3rem;
+    background-color: lightgrey;
+    color: blue;
+}
+#SeniorDesign{
+	display: none;
+	background-color: rgb(207,196,147);
+}
+#Microcontrollers{
+	display: none;
+}
+#Microcontrollers div{
+	background-color: rgb(207,196,147);
+}
+.carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+#MIPS{
+	display: none;
+}
+#MIPS div{
+	background-color: rgb(207,196,147);
+}
+#VLSI{
+	display: none;
+}
+#VLSI div{
+	background-color: rgb(207,196,147);
+}
+#about_me_text{
+	position: relative;
+	left: 0rem;
+	padding-right: 0rem;
+
+}
+.show_when_mobile{
+	display: none;
+}
+
+/*For large horizontal real estate */
+@media only screen and (min-width: 1200px) {
+	#about_me_text{
+		left: 10%;
+		padding-right: 16rem;
+	}
+	.work_body{
+		position: relative;
+		left: 10rem;
+		padding-right: 16rem;"
+	}
+	.large_header{
+		position: relative;
+		left: 10rem;
+		padding-right: 12rem;
+	}
+	#work_behrend{
+		max-width: 120%;
+	}
+	#work_ei{
+		max-width: 120%;
+	}
+	#work_na{
+		max-width: 115%;
+		max-height: auto;
+	}
+}
+/*Mobile*/
+@media only screen and (max-width: 690px) {
+	#google_form{
+		padding-right: 9%;
+		width: 350px;
+		height: 1000px;
+	}
+	.work_text_mobile{
+		text-align: center;
+		padding-top: 2%;
+	}
+	.hide_when_mobile{
+		display: none;
+	}
+	.show_when_mobile{
+		display: block;
+	}
+	#page_header{
+		font-size: 2.5rem;
+	}
+	#work_location_mobile{
+		text-align: center; 
+		padding-bottom: 0%
+	}
+	#work_vt{
+		margin-top: 0rem;
+	}
+	#work_behrend{
+		margin-top: 0rem;
+	}
+	#work_ei{
+		margin-top: 0rem;
+	}
+	#work_na{
+		margin-top: 0rem;
+	}
+	#fullname{
+		font-size: 4rem;
+	    font-weight: 300;
+	    line-height: 1.2
+	}
+	#maininfo{
+		font-size: 1.5rem;
+		padding: 0.5rem;
+	}
+}

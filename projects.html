@@ -1,0 +1,368 @@
+<!--
+   Author:	Cameron Makin
+   Creation Date:  7/3/2019
+	Revision Date:  03/15/2021
+	Comments: Projects page for personal site
+-->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/custom.css">
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/custom.js"></script>
+      <title>Cameron Makin</title>
+      <link rel="shortcut icon" type="image/png" href="images/processor_favicon.png"/>
+   </head>
+   <body>
+      <div class="header_picture" style="background-image: url('images/niagara_falls.jpg')">
+         <div class="btn-group float-right" style="flex-wrap: wrap;">
+            <a role="button" class="btn trans_unit" href="index.html">Home</a>
+            <a role="button" class="btn trans_unit" href="education.html">Education</a>
+            <a role="button" class="trans_unit btn" href="#"><strong>Projects</strong></a>
+            <a role="button" class="btn trans_unit" href="work_experience.html">Work Experience</a>
+            <a role="button" class="btn trans_unit" href="about_me.html">About Me</a>
+            <a role="button" class="btn trans_unit" href="contact.html">Contact</a>
+         </div><br><br><br>
+         <h1 class="display-1" id="page_header" style="text-align:center">Side Projects</h1>
+         <br><br><br>
+      	</div>
+      <div class="container-fluid">
+         <div class="jumbotron" style="background-color: rgb(252,181,20)">
+            <p style="text-align:center">With my spare time, I like to take on small projects that teach me about different programming languages!</p>
+         </div>
+      </div>
+      <div class="container-fluid">
+			<div class="jumbotron">
+				<div class="row">
+					<!-- <div class="col-md-4">
+						<a href="https://vt.edu/" target="_blank"><img src="images/vt.png" alt="Virginia Polytechnic Institute and State University" class="rounded img-fluid link_image" style="display: block;width: 50%;margin: auto;"></a>
+					</div> -->
+					<div class="col-md-12" class="large_header">
+						<h2 class="work_text_mobile">Personal Website</h2>
+						<ul>
+							<strong>I started development of this website</strong> in order to learn how to develop a simple webpage, 
+                        purchase a domain name, consider hosting options, and deliver custom content. I have thoroughly enjoyed the process of creating this website, 
+                        and it provides me with a commonplace to showcase more infomration about me that may not be fit for a resume or LinkedIn. As I got comfortable with the basic HTML/CSS for the site,
+                        I stared exporing adding media and forms. I've learned how to embed videos that provide a visual to sone of the work I have done. 
+                        
+                        More complex is the Contact Me form. Luckily, Google Forms provided a simple HTML and JS code snippet to include the form onto the page. Easy. 
+                        The new step I took was to integrate an email response system to form submissions. I was able to integrate Google Sheets with the Google Form, and then
+                        using the Form Mule plugin for Sheets, I can send emails to those who provide their email and also indicate that want a copy of my resume.
+                        
+                        The greatest part of this process is that the website is still static -- it contains no backend code to hand the form and email response. The Google products and 
+                        Form Mule plugin for Sheets allows this website to remain static (and free to host)!
+
+                        I use Google Domains and pay $12 a year for my domain name, and my webpage is hosted for free (since it is static) using Google Cloud Buckets. 
+                        I will most likely move to Github.io for hosting since I can easily commit and push changes and they are reflected, rather than reuploading files to Google Cloud.
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+      <div class="container-fluid">
+			<div class="jumbotron">
+				<div class="row">
+					<!-- <div class="col-md-4">
+						<a href="https://vt.edu/" target="_blank"><img src="images/vt.png" alt="Virginia Polytechnic Institute and State University" class="rounded img-fluid link_image" style="display: block;width: 50%;margin: auto;"></a>
+					</div> -->
+					<div class="col-md-12" class="large_header">
+						<h2 class="work_text_mobile">IoT RaspberryPi</h2>
+						<ul>
+							<strong>Curious as to how to </strong> create a device that is accessible to the internet and controls sensory hardware, I purchased a RaspberryPi (RasPi) and simply began writing code for it.
+                     I knew I wanted the RasPi to do two things:<ul>
+                        <li>I wanted the device to be able to utilize its GPIO/SPI pins to interface with sensory hardware such as a LCD</li>
+                        <li>I wanted the RasPi to host a website that would be accessible via the internet where users could interact with the attached sensory devices</li>
+                     </ul>
+                     For the GPIO/SPI connections, I decided to wire them up to a small 16x2 LCD display. Since the display requires more connections than there are GPIO pins, 
+                     I am using SPI and an SPI IO Expander to increase the number of available outputs my RasPi has effectively. 
+                     To date, I have completed a set of Python scripts that act as LCD and SPI drivers, and also create a simple function that accepts a short string as a parameter, and it prints the string on the display!
+
+                     Regarding the website, I installed the LAMP stack of products. The RasPi is running Raspbian for the OS. While I originally wanted a headless installation, 
+                     I decided against it so I can use the RasPi for casual web surfing or streaming services on a TV (while also hosting the website). 
+                     I configured Apache to listen to a the HTTP port on my network and set up the proper port forwarding rules and permissions to allow outside traffic into my local network at home.
+                     To date, a very simple "Hello World" PHP website is hosted by the RasPi. Ideally, the PHP driven website would have access to the RasPi hardware pins, 
+                     most likely in an indirect fashion with Python controlling the pins.
+                     
+                     While the website is crude at the moment, the next goal (free time permitting), is to decide on the website to hardware interface. Using Python for the website has come to mind, 
+                     however I am stubborn and would prefer to be cross-disciplined and use a different web language. In this case, I am going against rapid prototyping methodology, however this project is for 
+                     fun and learning, rather than using Python for everything! 
+
+                     Once I finish the connection between the website and the hardware, I will most likely look to replace the LCD with another microcontroller (possibly an Ardino or PIC32) where I can practice
+                     writing C for the sensors interface. This architecture would not be the most efficient, but again, this is for fun!
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+      <!-- <div class="container-fluid">
+	      <ul class="pagination justify-content-center" style="flex-wrap: wrap;">
+	         <li class="page-item"><a href="#" class="page-link project_btn" onclick='changeProject("SeniorDesign")'>Senior Design</a></li>
+	         <li class="page-item"><a href="#" class="page-link project_btn" onclick='changeProject("Microcontrollers")'>Microcontrollers</a></li>
+	         <li class="page-item"><a href="#" class="page-link project_btn" onclick='changeProject("MIPS")'>MIPS</a></li>
+	         <li class="page-item"><a href="#" class="page-link project_btn" onclick='changeProject("VLSI")'>VLSI</a></li>
+	      </ul>
+  	  </div>
+      <div class="container-fluid">
+         <div class="jumbotron tab" id="SeniorDesign">
+            <h4 style="text-align:center">Senior Design - Implementing Cryptography on an FPGA + Microprocessor (Hardware Acceleration)</h4>
+            <p>Sponsored by SecureRF, I worked alongside 2 other computer engineering students with the goal of optimizing a computationally extensive function of SecureRF's crypto algorithms called. The optimization is device specific as provided by SecureRF (MicroSemi SmartFusion2 SoC FPGA). As a group, we took the provided C implementation and optimized the E-multiplication operation in hardware (FPGA + Verilog) as well as with modified Assembly routines in order to achieve the highest throughput, lowest latency, and least amount of memory usage as possible. We reached our goal by creating implementations that were significantly faster than the originally provided C implementation. To read about E-multiplication or other relevant information regarding these efforts, please head over to SecureRF's White Papers webpage.</p>
+            <img src="images/poster.svg">
+         </div>
+         <div class="container tab" id="Microcontrollers" style="max-width: 100%">
+            <div class="jumbotron" style="text-align:center">
+               <h4>Microcontrollers - Proficiency in Embedded Systems and C</h4>
+               <p>Here are several projects using the PIC32 Microcontroller (MCU)</p>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-8" style="min-height: 371px">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <img class="d-block w-100" src="images/color_sensor_build.jpg" alt="First slide">
+                                 <div class="carousel-caption" style=" background-color: rgba(33, 37, 41,.2); color: black;">
+									<h3>Final Wiring</h3>
+                                    <p>Finished product with clean wiring</p>
+                                 </div>
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="images/color_sensor_block_diagram.jpg" alt="Second slide">
+                                 <div class="carousel-caption" style=" background-color: rgba(33, 37, 41,.2); color: black;">
+                                 	<h3>Block Diagram</h3>
+                                    <p>Used OneNote to create a clean looking block diagram showing basic info</p>
+                                 </div>
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="images/color_sensor_schematic.jpg" alt="Third slide">
+                                 <div class="carousel-caption" style=" background-color: rgba(128,128,128,.2); color: black;">
+                                    <h3>Schematic</h3>
+                                    <p>Also used Onenote to create this drawing by hand for a clean schematic</p>
+                                 </div>
+                              </div>
+                              <div class="carousel-item">
+                                 <video width="100%" class="d-block" controls autoplay muted>
+                                    <source src="videos/color_sensor.mp4" type="video/mp4">
+                                    Your browser does not support this mp4 video!
+                                 </video>
+                                 <div class="carousel-caption" style=" background-color: rgba(128,128,128,.2); color: black;">
+                                    <h3>Video - Functionality</h3>
+                                    <p>Tested the sensor by placing a red object then a blue object on top the sensor</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="height: 20%;top: 10px;">
+                              <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: grey;border-radius: 2px;"></span>
+                              <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="height: 20%;top: 10px;">
+                              <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: grey;border-radius: 2px;"></span>
+                              <span class="sr-only">Next</span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <h4 style="text-align:center">Color Sensor</h4>
+                        <br>
+                        <p>My final project in my embedded systems class my lab partner and I decided that we wanted to display our abilities to come up with our own project idea, purchase necessary materials, build, and demonstrate our final deliverable. Browsing online shops, we came across the Adafruit RGB Color Sensor with IR filter and White LED TCS34725. Inspired by the low cost and familiar communication protocol I2C, we decided to create an application that would sense a color and then show the same color on a display. Upon delivery, we quickly soldered the pins onto the sensor and began trying to communicate with it. Considering the very few number of pins on the device, it was simple to physically connect it to the MCU. The first true roadblock we came across was our inability to communicate with the device. We had a lot of trouble sending data or reading back. After lots of troubleshooting, we discovered that the datasheet had improperly defined the registers we needed for communication to the device. Once we found out the proper registers to be reading and writing from, creating the display was simple. Overall, the project went smoothly. As you can see, on the display there is a small circle which updates with the color sensed. It was found that using the onboard LED helped a lot with more accurate color recognition.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <video width="100%" class="d-block" controls muted>
+                           <source src="videos/joystick_temp_sens.mp4" type="video/mp4">
+                           Your browser does not support this mp4 video!
+                        </video>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>Analog Joystick + Temperature Sensor</h4>
+                        <p>Using I2C, I connected a temperature sensor and an analog joystick to the PIC32 MCU.</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <a href="https://drive.google.com/file/d/13WFfon43pdhlmBMBmtr8RqzDYDuTMdc8/view?usp=sharing" target="_blank" ><img src="images/lab10_schematic.jpg" alt="Servo Motor Lab" width="493" height="261"  class="rounded img-fluid link_image"></a>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>Servo Motors + PWM LED</h4>
+                        <p>Utilizing PIC32 PWM capabilities, controlled 2-axis servo motor with joystick (no video available -- click to expand image)</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <video width="100%" class="d-block" controls muted>
+                           <source src="videos/accelerometer.mp4" type="video/mp4">
+                           Your browser does not support this mp4 video!
+                        </video>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>I2C + Accelerometer</h4>
+                        <p>Interfaced an accelerometer and IO expander to PIC32 using I2C communication</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <video width="100%" class="d-block" controls muted>
+                           <source src="videos/rotary_encoder.mp4" type="video/mp4">
+                           Your browser does not support this mp4 video!
+                        </video>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>TFT + Rotary Encoder</h4>
+                        <p>Exemplified touch capabilities of TFT along with rotary encoder to PIC32</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <video width="100%" class="d-block" controls muted>
+                           <source src="videos/spi_comms.mp4" type="video/mp4">
+                           Your browser does not support this mp4 video!
+                        </video>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>SPI Communication</h4>
+                        <p>Interfaced an IO expander and TFT display to a PIC32 using SPI communication</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <video width="100%" height="276" class="d-block" controls muted>
+                           <source src="videos/state_machine.mp4" type="video/mp4">
+                           Your browser does not support this mp4 video!
+                        </video>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>PIC32 State Machine</h4>
+                        <p>Created a simple state machine with a PIC32 MCU with GPIO </p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container tab" id="MIPS" style="max-width: 100%">
+            <div class="jumbotron">
+               <h4 style="text-align:center">MIPS Assembly - Assembly Language Projects with MARS IDE</h4>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <a href="https://github.com/cammakin/MIPS-Connect4" target="_blank"><img src="images/connect4.jpg" alt="Connect 4" width="100%" class="rounded img-fluid link_image"></a>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>Connect 4</h4>
+                        <p>Recreated the game Connect 4 complete with graphics and keyboard support</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-6">
+                        <a href="https://github.com/cammakin/MIPS-Simon" target="_blank" ><img src="images/simon.jpg"  alt="Simon Game" width="100%" class="rounded img-fluid link_image"></a>
+                     </div>
+                     <div class="col-md-4">
+                        <h4>Simon</h4>
+                        <p>Created a similar version of the game Simon where user must enter input according to flashing box within a few seconds</p>
+                     </div>
+                     <div class="col-md-1"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container tab" id="VLSI" style="max-width: 100%">
+            <div class="jumbotron">
+               <h4 style="text-align:center">VLSI - Digital Circutis and Layout Design with MAGIC VLSI software</h4>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-2"></div>
+                     <div class="col-md-4">
+                        <a href="https://drive.google.com/file/d/1i5q8lNAywQiqf8G5t_wIQ-q4cq1_aA_b/view?usp=sharing" target="_blank"><img src="images/12bit_add_sub.png" alt="12-bit Adder-Subtractor" width="493" height="261"  class="rounded img-fluid link_image"></a>
+                     </div>
+                     <div class="col-md-6">
+                        <h4>12 bit carry select adder-subtractor </h4>
+                        <p>Used MAGIC VLSI layout software to create design of adder-subtractor</p>
+                     </div>
+                  </div>
+                  <br><br>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <a href="https://drive.google.com/file/d/1vMbsIXtDSloPSu2sfc9UYVZ4KJD3kKR6/view?usp=sharing">
+                        <img src="images/irsim.jpg" alt="12-bit Adder-Subtractor IRSIM" width="493" height="261"  class="rounded img-fluid link_image"></a>
+                        <p style="text-align:center">IRSIM of 12-bit Adder Functionality</p>
+                     </div>
+                     <div class="col-md-4">
+                        <a href="https://drive.google.com/open?id=1tfM_Lq7eePS0ztUfzXOmamCs78XdOz7Z" target="_blank"><img src="images/delay.jpg" alt="12-bit Adder-Subtractor Delay" width="493" height="261"  class="rounded img-fluid link_image"></a>
+                        <p style="text-align:center">PSPICE Simulation Testing Delay</p>
+                     </div>
+                     <div class="col-md-4">
+                        <a href="https://drive.google.com/open?id=1sGZDSzrdUoZHCJxetNEXHixbQ7OzPn0H" target="_blank"><img src="images/adder.jpg" alt="Uniform Size Adder" width="493" height="261" class="rounded img-fluid link_image"></a>
+                        <p style="text-align:center">Uniform Size Adder</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="jumbotron">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <a href="https://drive.google.com/open?id=1KH5M7tVTP7LS_D8NDwr4iGFlTpGS6XI5" target="_blank"><img src="images/full_adder.jpg" alt="Full Adder" width="493" height="261" class="rounded img-fluid link_image"></a>
+                     </div>
+                     <div class="col-md-6">
+                        <h4>Full Adder</h4>
+                        <p>Layout deign of adders used in 12 bit adder-subtractor</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div><br><br><br><br><br><br> -->
+   </body>
+</html>
